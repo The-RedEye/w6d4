@@ -1,7 +1,7 @@
 class ArtworkSharesController < ApplicationController
-    def index 
-        render json: ArtworkShare.all 
-    end 
+    # def index 
+    #     render json: ArtworkShare.all 
+    # end 
 
     def create
         artwork_share = ArtworkShare.new(artwork_share_params)
@@ -13,6 +13,9 @@ class ArtworkSharesController < ApplicationController
     end 
 
     def destroy
+        artwork_share = ArtworkShare.find(params[:id])
+        artwork_share.destroy
+        render json: artwork_share
     end 
 
     private
