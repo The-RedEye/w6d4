@@ -2,7 +2,13 @@ class UsersController < ApplicationController
   
 
   def index
-    render json: User.all
+    if params[:user][:username] # gets user[username] from value
+      name = params[:user][:username]
+      user = User.find_by(username: name)
+      render json: user
+    else
+      render json: User.all
+    end
 
   end
 
