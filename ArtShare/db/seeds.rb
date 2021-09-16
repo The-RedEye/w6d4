@@ -20,3 +20,8 @@ a3 = Artwork.create!(title: 'bridge', image_url: 'water', artist_id: u2.id)
 as1 = ArtworkShare.create!(artwork_id: a1.id, viewer_id: u1.id)
 as2 = ArtworkShare.create!(artwork_id: a2.id, viewer_id: u1.id)
 as3 = ArtworkShare.create!(artwork_id: a3.id, viewer_id: u3.id)
+
+#Comments 
+c1 = Comment.create!(commenter_id: 1, artwork_id: 3, body: 'I miss SF')
+c2 = Comment.create!(commenter_id: 2, artwork_id: 2, body: 'I like the colors')
+c3 = Comment.create!(commenter_id: 3, artwork_id: 1, body: "I don't like the colors")
